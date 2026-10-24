@@ -107,7 +107,7 @@ export function Footer() {
       <div className="border-t border-line-dark">
         <Container className="flex flex-col gap-4 py-6 text-sm text-cream/65 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {business.name} {business.copyrightYear}. All Rights Reserved.
+            © {business.copyrightYear} {business.name}. All Rights Reserved.
           </p>
           <nav aria-label="Legal">
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
