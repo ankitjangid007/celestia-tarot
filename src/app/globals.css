@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #08070b;
+  --color-plum: #21152d;
+  --color-plum-dark: #302044;
+  --color-violet: #6d3fd9;
+  --color-gold: #c9a96e;
+  --color-gold-soft: #e1c98a;
+  --color-cream: #f4efe6;
+  --color-ivory: #fbf8f1;
+  --color-muted: #8e8799;
+  --color-ink: #211b25;
+  --color-ink-soft: #5b5262;
+  --color-line: #d8ccb8;
+  --color-line-dark: #3a2d43;
+}
+
+@theme inline {
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-midnight);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-violet);
+    outline-offset: 3px;
+  }
+
+  [data-tone="dark"] :focus-visible,
+  [data-tone="dark"]:focus-visible {
+    outline-color: var(--color-gold-soft);
+  }
+}
+
+/* Motion: slow, subtle, organic. Everything below is disabled for reduced-motion users. */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-14px) rotate(-1.5deg); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+}
+
+.animate-float { animation: float 9s ease-in-out infinite; }
+.animate-twinkle { animation: twinkle 5s ease-in-out infinite; }
+.animate-drift { animation: drift 16s ease-in-out infinite; }
+
+.rise { animation: rise 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-1 { animation-delay: 80ms; }
+.rise-2 { animation-delay: 240ms; }
+.rise-3 { animation-delay: 400ms; }
+.rise-4 { animation-delay: 560ms; }
+.rise-5 { animation-delay: 360ms; animation-duration: 1.6s; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .animate-float,
+  .animate-twinkle,
+  .animate-drift,
+  .rise,
+  .reveal {
+    animation: none !important;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
