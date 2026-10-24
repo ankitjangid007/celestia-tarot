@@ -163,22 +163,24 @@ interface CardBackProps {
 
 function CardBack({ idPrefix, x, rotation, accent = false }: CardBackProps) {
   return (
-    <g transform={`translate(${x} 410) rotate(${rotation})`}>
-      <rect x="-90" y="-330" width="180" height="300" rx="10" fill={`url(#${idPrefix}-face)`} />
-      <rect x="-90" y="-330" width="180" height="300" rx="10" fill="none" stroke="#c9a96e" strokeWidth="1.2" />
-      <rect x="-80" y="-320" width="160" height="280" rx="5" fill="none" stroke="#c9a96e" strokeOpacity="0.5" strokeWidth="0.7" />
-      <g transform="translate(0 -180)" fill="none" stroke="#c9a96e" strokeWidth="0.8">
-        <circle r="52" strokeOpacity="0.7" />
-        <rect x="-30" y="-30" width="60" height="60" strokeOpacity="0.6" />
-        <rect x="-30" y="-30" width="60" height="60" strokeOpacity="0.6" transform="rotate(45)" />
-        <circle r="6" fill="#e1c98a" stroke="none" />
-        {accent ? (
-          <g transform="translate(-34 -34) scale(0.5)">
-            <path d={CRESCENT_PATH} fill="#c9a96e" stroke="none" />
-          </g>
-        ) : null}
+    <g className="pointer-events-auto [transform-box:fill-box] [transform-origin:center] transition-[scale,filter] duration-300 hover:scale-105 hover:brightness-125 hover:drop-shadow-[0_0_8px_rgba(225,201,138,0.7)]">
+      <g transform={`translate(${x} 410) rotate(${rotation})`}>
+        <rect x="-90" y="-330" width="180" height="300" rx="10" fill={`url(#${idPrefix}-face)`} />
+        <rect x="-90" y="-330" width="180" height="300" rx="10" fill="none" stroke="#c9a96e" strokeWidth="1.2" />
+        <rect x="-80" y="-320" width="160" height="280" rx="5" fill="none" stroke="#c9a96e" strokeOpacity="0.5" strokeWidth="0.7" />
+        <g transform="translate(0 -180)" fill="none" stroke="#c9a96e" strokeWidth="0.8">
+          <circle r="52" strokeOpacity="0.7" />
+          <rect x="-30" y="-30" width="60" height="60" strokeOpacity="0.6" />
+          <rect x="-30" y="-30" width="60" height="60" strokeOpacity="0.6" transform="rotate(45)" />
+          <circle r="6" fill="#e1c98a" stroke="none" />
+          {accent ? (
+            <g transform="translate(-34 -34) scale(0.5)">
+              <path d={CRESCENT_PATH} fill="#c9a96e" stroke="none" />
+            </g>
+          ) : null}
+        </g>
+        <path d={sparklePath(5)} transform="translate(0 -62)" fill="#e1c98a" />
       </g>
-      <path d={sparklePath(5)} transform="translate(0 -62)" fill="#e1c98a" />
     </g>
   );
 }
@@ -198,6 +200,8 @@ export function TarotFan({ idPrefix = "fan", className }: { idPrefix?: string; c
           <stop offset="1" stopColor="#1a1027" />
         </linearGradient>
       </defs>
+      {/* <CardBack idPrefix={idPrefix} x={178} rotation={-16} />
+      <CardBack idPrefix={idPrefix} x={302} rotation={16} /> */}
       <CardBack idPrefix={idPrefix} x={140} rotation={-16} />
       <CardBack idPrefix={idPrefix} x={340} rotation={16} />
       <CardBack idPrefix={idPrefix} x={240} rotation={0} accent />
