@@ -75,7 +75,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Button href={BOOKING_HREF} className="min-h-11 px-6 py-2">
+          <Button href={BOOKING_HREF} external className="min-h-11 px-6 py-2">
             Book a Reading
           </Button>
         </nav>
@@ -120,7 +120,7 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <Button href={BOOKING_HREF} className="mt-6 w-full" >
+            <Button href={BOOKING_HREF} external className="mt-6 w-full">
               Book a Reading
             </Button>
           </nav>

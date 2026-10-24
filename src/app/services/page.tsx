@@ -73,7 +73,7 @@ export default function ServicesPage() {
                 {service.note ? (
                   <p className="border-l-2 border-gold pl-4 text-sm leading-relaxed text-ink-soft">{service.note}</p>
                 ) : null}
-                <Button href={BOOKING_HREF} variant="plum">
+                <Button href={BOOKING_HREF} external variant="plum">
                   Book This Reading
                   <span className="sr-only"> : {service.title}</span>
                 </Button>

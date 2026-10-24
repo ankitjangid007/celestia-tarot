@@ -25,4 +25,4 @@ export const mailtoHref = (subject?: string, body?: string): string => {
   return `mailto:${business.email}${query ? `?${query}` : ""}`;
 };
 
-export const BOOKING_HREF = "/contact#booking";
+export const BOOKING_HREF = whatsappUrl("Hello, I’d like to book a tarot reading.");

@@ -36,7 +36,7 @@ export function Hero() {
             Personalized tarot readings designed to help you reflect, explore your questions, and gain a fresh perspective on life’s important moments.
           </p>
           <div className="rise rise-4 mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button href={BOOKING_HREF}>Book a Reading</Button>
+            <Button href={BOOKING_HREF} external>Book a Reading</Button>
             <Button href="/services" variant="outline-light">
               Explore Services
             </Button>

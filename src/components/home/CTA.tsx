@@ -28,7 +28,7 @@ export function CTA({ headingId = "cta-heading" }: CTAProps) {
           Take a moment to pause, reflect and explore what the cards may offer.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href={BOOKING_HREF}>Book a Reading</Button>
+          <Button href={BOOKING_HREF} external>Book a Reading</Button>
           <Button href={whatsappUrl("Hello, I’d like to book a tarot reading.")} external variant="outline-light">
             Chat on WhatsApp
           </Button>
