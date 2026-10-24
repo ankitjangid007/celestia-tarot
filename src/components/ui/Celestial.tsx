@@ -100,14 +100,36 @@ export function Ornament({ className }: { className?: string }) {
   );
 }
 
-/** Brand mark: a crescent and spark held in a fine gold ring. */
+/** Radiating-light ray angles for the brand mark (upper half only). */
+const MARK_RAYS = Array.from({ length: 11 }, (_, index) => {
+  const angle = ((-165 + index * 15) * Math.PI) / 180;
+  const outer = index % 2 === 1 ? 13.2 : 11.5;
+  const point = (radius: number) => [
+    Math.round((20 + Math.cos(angle) * radius) * 100) / 100,
+    Math.round((29 + Math.sin(angle) * radius) * 100) / 100,
+  ] as const;
+  const [x1, y1] = point(9.5);
+  const [x2, y2] = point(outer);
+  return { x1, y1, x2, y2 };
+});
+
+/**
+ * Brand mark: a halo (blessed) above a radiant star (divinity), cradled by a crescent,
+ * all inside a tarot-card arch. Portrait 40×52; size it by height (e.g. "h-10 w-auto").
+ */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <svg aria-hidden focusable="false" viewBox="0 0 40 40" fill="none" className={cn("text-gold", className)}>
-      <circle cx="20" cy="20" r="18.5" stroke="currentColor" strokeWidth="1" />
-      <circle cx="20" cy="20" r="15" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
-      <path d={CRESCENT_PATH} transform="translate(11 9) scale(0.2) rotate(-15 50 50)" fill="currentColor" />
-      <path d={sparklePath(3.2)} transform="translate(26 24)" fill="currentColor" />
+    <svg aria-hidden focusable="false" viewBox="0 0 40 52" className={cn("text-gold", className)}>
+      <path d="M3 50V19A17 17 0 0 1 37 19V50Z" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinejoin="round" />
+      <path d="M6 47.5V19A14 14 0 0 1 34 19V47.5Z" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.45" />
+      <ellipse cx="20" cy="10.2" rx="6.5" ry="2" fill="none" stroke="currentColor" strokeWidth="1" />
+      <g stroke="currentColor" strokeWidth="0.7" strokeLinecap="round">
+        {MARK_RAYS.map((ray, index) => (
+          <line key={index} x1={ray.x1} y1={ray.y1} x2={ray.x2} y2={ray.y2} />
+        ))}
+      </g>
+      <path d={sparklePath(7.5)} transform="translate(20 29)" fill="currentColor" />
+      <path d="M8 35.5Q20 53 32 35.5Q20 44.5 8 35.5Z" fill="currentColor" />
     </svg>
   );
 }

@@ -1,4 +1,4 @@
-# Celestia Tarot (placeholder brand)
+# Blessed Divinity Tarot Consultancy
 
 Next.js (App Router) · TypeScript (strict) · Tailwind CSS v4 · Lucide React. No image assets: all visuals are SVG/CSS.
 

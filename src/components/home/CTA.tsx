@@ -23,7 +23,7 @@ export function CTA({ headingId = "cta-heading" }: CTAProps) {
         {/* Arched "tarot window" framing the call to action. */}
         <div className="relative mx-auto max-w-4xl rounded-t-[9rem] rounded-b-3xl border border-gold/50 bg-midnight/60 px-6 pb-14 pt-20 text-center backdrop-blur-[2px] sm:rounded-t-[20rem] sm:px-16 sm:pb-20 sm:pt-28">
           <span aria-hidden className="pointer-events-none absolute inset-2 rounded-[inherit] border border-gold/20" />
-          <LogoMark className="mx-auto mb-8 size-14" />
+          <LogoMark className="mx-auto mb-8 h-20 w-auto" />
           <h2
             id={headingId}
             className="mx-auto max-w-3xl font-serif text-balance text-[clamp(2.4rem,6.5vw,4.75rem)] font-medium leading-[1.02] tracking-tight"
@@ -34,9 +34,7 @@ export function CTA({ headingId = "cta-heading" }: CTAProps) {
             Take a moment to pause, reflect and explore what the cards may offer.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href={BOOKING_HREF} external>
-              Book a Reading
-            </Button>
+            <Button href={BOOKING_HREF} external>Book a Reading</Button>
             <Button href={whatsappUrl("Hello, I’d like to book a tarot reading.")} external variant="outline-light">
               Chat on WhatsApp
             </Button>

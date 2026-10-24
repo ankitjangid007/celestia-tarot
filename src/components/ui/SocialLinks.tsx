@@ -43,7 +43,7 @@ export function SocialLinks({ className, tone = "dark" }: SocialLinksProps) {
     { label: "Instagram", href: business.instagram, icon: <InstagramIcon /> },
     { label: "Facebook", href: business.facebook, icon: <FacebookIcon /> },
     { label: "WhatsApp", href: whatsappUrl(), icon: <MessageCircle size={20} strokeWidth={1.6} aria-hidden /> },
-  ];
+  ].filter((link) => link.href);
   return (
     <ul className={cn("flex items-center gap-3", className)}>
       {links.map((link) => (

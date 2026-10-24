@@ -32,12 +32,15 @@ export function Footer() {
       <Container className="grid gap-14 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:py-20">
         <div className="sm:col-span-2 lg:col-span-4">
           <Link href="/" className="inline-flex items-center gap-3">
-            <LogoMark className="size-11" />
-            <span className="font-serif text-3xl font-semibold">{business.name}</span>
+            <LogoMark className="h-14 w-auto" />
+            <span className="flex flex-col leading-none">
+              <span className="font-serif text-3xl font-semibold">{business.shortName}</span>
+              <span className="mt-2 text-[0.65rem] uppercase tracking-[0.32em] text-gold-soft">{business.descriptor}</span>
+            </span>
           </Link>
           <p className="mt-2 font-serif text-lg italic text-gold-soft">{business.tagline}</p>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">{business.description}</p>
-          <SocialLinks className="mt-7" />
+          {/* <SocialLinks className="mt-7" /> */}
         </div>
 
         <nav aria-label="Footer navigation" className="lg:col-span-2">
@@ -96,8 +99,8 @@ export function Footer() {
       </Container>
 
       <div aria-hidden className="pointer-events-none select-none overflow-hidden px-4 text-center">
-        <p className="font-serif text-[clamp(3.5rem,15vw,13rem)] font-medium leading-[0.8] tracking-tight text-transparent [-webkit-text-stroke:1px_rgba(201,169,110,0.3)]">
-          {business.name}
+        <p className="font-serif text-[clamp(3.5rem,15vw,13rem)] font-medium leading-[0.95] tracking-tight text-transparent pb-3 [-webkit-text-stroke:1px_rgba(201,169,110,0.3)]">
+          {business.shortName}
         </p>
       </div>
 

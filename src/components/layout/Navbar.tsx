@@ -54,8 +54,11 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <LogoMark className="size-9 shrink-0" />
-          <span className="font-serif text-2xl font-semibold tracking-wide sm:text-[1.7rem]">{business.name}</span>
+          <LogoMark className="h-12 w-auto shrink-0" />
+          <span className="flex flex-col leading-none">
+            <span className="font-serif text-2xl font-semibold tracking-wide sm:text-[1.7rem]">{business.shortName}</span>
+            <span className="mt-1.5 text-[0.6rem] uppercase tracking-[0.32em] text-gold-soft">{business.descriptor}</span>
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
@@ -120,7 +123,7 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <Button href={BOOKING_HREF} external className="mt-6 w-full">
+            <Button href={BOOKING_HREF} external className="mt-6 w-full" >
               Book a Reading
             </Button>
           </nav>
