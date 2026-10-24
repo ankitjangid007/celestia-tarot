@@ -23,7 +23,7 @@ export default function ContactPage() {
         title="Contact Us"
         description="Ready to book a reading, or just have a question? Send a message and we’ll get back to you."
       />
-      <Section tone="ivory" id="booking" labelledBy="booking-heading" className="py-16 sm:py-24">
+      <Section tone="ivory" id="booking" labelledBy="booking-heading" size="md">
         <Container className="grid gap-14 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <h2 id="contact-details-heading" className="font-serif text-4xl font-medium text-plum">

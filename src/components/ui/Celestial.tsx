@@ -99,3 +99,46 @@ export function Ornament({ className }: { className?: string }) {
     </svg>
   );
 }
+
+/** Brand mark: a crescent and spark held in a fine gold ring. */
+export function LogoMark({ className }: { className?: string }) {
+  return (
+    <svg aria-hidden focusable="false" viewBox="0 0 40 40" fill="none" className={cn("text-gold", className)}>
+      <circle cx="20" cy="20" r="18.5" stroke="currentColor" strokeWidth="1" />
+      <circle cx="20" cy="20" r="15" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
+      <path d={CRESCENT_PATH} transform="translate(11 9) scale(0.2) rotate(-15 50 50)" fill="currentColor" />
+      <path d={sparklePath(3.2)} transform="translate(26 24)" fill="currentColor" />
+    </svg>
+  );
+}
+
+const ORBIT_TICKS = Array.from({ length: 60 }, (_, index) => {
+  const angle = (index * 6 * Math.PI) / 180;
+  const long = index % 5 === 0;
+  const inner = long ? 94.5 : 96.5;
+  return {
+    x1: Math.round((100 + Math.cos(angle) * inner) * 100) / 100,
+    y1: Math.round((100 + Math.sin(angle) * inner) * 100) / 100,
+    x2: Math.round((100 + Math.cos(angle) * 98.5) * 100) / 100,
+    y2: Math.round((100 + Math.sin(angle) * 98.5) * 100) / 100,
+    long,
+  };
+});
+
+/** Astrolabe-style concentric rings with tick marks. Decorative backdrop for focal visuals. */
+export function OrbitRings({ className }: { className?: string }) {
+  return (
+    <svg aria-hidden focusable="false" viewBox="0 0 200 200" fill="none" className={cn("text-gold", className)}>
+      <circle cx="100" cy="100" r="98.5" stroke="currentColor" strokeWidth="0.35" opacity="0.5" />
+      <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="0.3" strokeDasharray="0.6 3" strokeLinecap="round" opacity="0.7" />
+      <circle cx="100" cy="100" r="62" stroke="currentColor" strokeWidth="0.3" opacity="0.3" />
+      {ORBIT_TICKS.map((tick, index) => (
+        <line key={index} x1={tick.x1} y1={tick.y1} x2={tick.x2} y2={tick.y2} stroke="currentColor" strokeWidth={tick.long ? 0.5 : 0.3} opacity={tick.long ? 0.8 : 0.45} />
+      ))}
+      <path d={sparklePath(3.4)} transform="translate(100 1.5)" fill="currentColor" />
+      <path d={sparklePath(2.6)} transform="translate(20 140)" fill="currentColor" opacity="0.8" />
+      <path d={sparklePath(2.6)} transform="translate(182 66)" fill="currentColor" opacity="0.8" />
+      <circle cx="39" cy="31" r="1.2" fill="currentColor" />
+    </svg>
+  );
+}

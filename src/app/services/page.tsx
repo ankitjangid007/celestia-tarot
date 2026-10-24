@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CTA } from "@/components/home/CTA";
 import { PageHero } from "@/components/layout/PageHero";
-import { ServiceIcon } from "@/components/services/ServiceCard";
+import { ServiceEmblem } from "@/components/services/ServiceCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -24,7 +24,7 @@ export default function ServicesPage() {
         description="Six kinds of reading, each shaped around the questions you bring. Choose the one that fits, or begin with a general reading."
       />
 
-      <Section tone="ivory" className="py-12 sm:py-16 lg:py-16">
+      <Section tone="ivory" size="sm">
         <Container>
           <p className="max-w-3xl text-base leading-relaxed text-ink-soft">
             All readings are offered for reflection and personal guidance. They are not medical, legal, financial or mental-health advice, and no outcome is guaranteed. Please read our{" "}
@@ -44,12 +44,12 @@ export default function ServicesPage() {
             id={service.id}
             tone={index % 2 === 0 ? "cream" : "ivory"}
             labelledBy={headingId}
-            className="py-16 sm:py-20 lg:py-24"
+            size="md"
           >
             <Container className="grid gap-10 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-5">
-                <ServiceIcon name={service.icon} size={40} className="text-violet" />
-                <h2 id={headingId} className="mt-6 font-serif text-balance text-4xl font-medium leading-tight text-plum sm:text-5xl">
+                <ServiceEmblem service={service} position={index + 1} />
+                <h2 id={headingId} className="mt-8 font-serif text-balance text-4xl font-medium leading-tight text-plum sm:text-5xl">
                   {service.title}
                 </h2>
                 <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">{service.description}</p>

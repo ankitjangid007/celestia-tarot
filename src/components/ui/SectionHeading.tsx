@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
+  /** Small label above the heading. Use sparingly. */
+  eyebrow?: string;
   title: ReactNode;
   description?: ReactNode;
   id?: string;
@@ -12,6 +14,7 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({
+  eyebrow,
   title,
   description,
   id,
@@ -23,6 +26,18 @@ export function SectionHeading({
   const dark = tone === "dark";
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
+      {eyebrow ? (
+        <p
+          className={cn(
+            "mb-6 flex items-center gap-4 text-xs font-medium uppercase tracking-[0.28em]",
+            align === "center" && "justify-center",
+            dark ? "text-gold-soft" : "text-violet",
+          )}
+        >
+          <span aria-hidden className={cn("h-px w-10", dark ? "bg-gold/70" : "bg-violet/50")} />
+          {eyebrow}
+        </p>
+      ) : null}
       <Tag
         id={id}
         className={cn(

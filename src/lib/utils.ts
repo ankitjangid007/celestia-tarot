@@ -25,4 +25,9 @@ export const mailtoHref = (subject?: string, body?: string): string => {
   return `mailto:${business.email}${query ? `?${query}` : ""}`;
 };
 
+const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"] as const;
+
+/** Roman numeral for 1–10, used as a decorative index on cards. */
+export const roman = (position: number): string => ROMAN[position - 1] ?? String(position);
+
 export const BOOKING_HREF = whatsappUrl("Hello, I’d like to book a tarot reading.");

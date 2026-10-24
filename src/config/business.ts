@@ -11,8 +11,8 @@ export const business = {
   description:
     "Celestia Tarot provides personalized tarot card reading services designed to offer reflection, clarity, and guidance across relationships, career, personal growth, and life's important decisions.",
   email: "hello@celestiatarot.com",
-  phone: "+91 00000 00000",
-  whatsapp: "+910000000000",
+  phone: "+91 98765 43210",
+  whatsapp: "+919876543210",
   address: "Jaipur, Rajasthan, India",
   instagram: "https://instagram.com/celestiatarot",
   facebook: "https://facebook.com/celestiatarot",

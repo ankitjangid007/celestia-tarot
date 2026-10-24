@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { Moon } from "@/components/ui/Celestial";
+import { LogoMark } from "@/components/ui/Celestial";
 import { Button } from "@/components/ui/Button";
 import { business } from "@/config/business";
 import { BOOKING_HREF, cn } from "@/lib/utils";
@@ -54,7 +54,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-18 w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Moon filled className="h-7 w-7 shrink-0" />
+          <LogoMark className="size-9 shrink-0" />
           <span className="font-serif text-2xl font-semibold tracking-wide sm:text-[1.7rem]">{business.name}</span>
         </Link>
 

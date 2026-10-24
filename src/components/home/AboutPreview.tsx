@@ -18,7 +18,7 @@ export function AboutPreview() {
           <TarotFan idPrefix="about-fan" className="relative pt-10" />
         </div>
         <div className="reveal">
-          <SectionHeading as="h2" id="about-preview-heading" title="A Moment to Pause, Reflect & Listen" />
+          <SectionHeading as="h2" id="about-preview-heading" eyebrow="About Us" title="A Moment to Pause, Reflect & Listen" />
           <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-ink-soft">
             <p>
               {business.name} offers tarot readings as a quiet pause in a busy life. Each session is unhurried and personal, shaped around the questions you bring rather than a fixed script.

@@ -1,6 +1,6 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
-import { Moon } from "@/components/ui/Celestial";
+import { Constellation, LogoMark, Starfield } from "@/components/ui/Celestial";
 import { Container } from "@/components/ui/Container";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { business } from "@/config/business";
@@ -25,12 +25,14 @@ const headingClass = "font-serif text-xl font-semibold text-cream";
 
 export function Footer() {
   return (
-    <footer data-tone="dark" className="relative bg-midnight text-cream">
+    <footer data-tone="dark" className="relative isolate overflow-hidden bg-midnight text-cream">
+      <Starfield className="-z-10 opacity-60" />
+      <Constellation className="absolute right-10 top-16 -z-10 hidden w-52 opacity-40 lg:block" />
       <div className="h-px bg-linear-to-r from-transparent via-gold/60 to-transparent" aria-hidden />
       <Container className="grid gap-14 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:py-20">
         <div className="sm:col-span-2 lg:col-span-4">
           <Link href="/" className="inline-flex items-center gap-3">
-            <Moon filled className="h-8 w-8" />
+            <LogoMark className="size-11" />
             <span className="font-serif text-3xl font-semibold">{business.name}</span>
           </Link>
           <p className="mt-2 font-serif text-lg italic text-gold-soft">{business.tagline}</p>
@@ -92,6 +94,12 @@ export function Footer() {
           </ul>
         </div>
       </Container>
+
+      <div aria-hidden className="pointer-events-none select-none overflow-hidden px-4 text-center">
+        <p className="font-serif text-[clamp(3.5rem,15vw,13rem)] font-medium leading-[0.8] tracking-tight text-transparent [-webkit-text-stroke:1px_rgba(201,169,110,0.3)]">
+          {business.name}
+        </p>
+      </div>
 
       <div className="border-t border-line-dark">
         <Container className="flex flex-col gap-4 py-6 text-sm text-cream/65 sm:flex-row sm:items-center sm:justify-between">

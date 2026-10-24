@@ -8,7 +8,7 @@ export function HowItWorks() {
     <Section tone="ivory" labelledBy="how-heading">
       <Container>
         <div className="reveal">
-          <SectionHeading as="h2" id="how-heading" title="How It Works" description="From first message to your session, in four simple steps." />
+          <SectionHeading as="h2" id="how-heading" eyebrow="The Process" title="How It Works" description="From first message to your session, in four simple steps." />
         </div>
         <ol className="relative mt-16 grid gap-12 lg:grid-cols-4 lg:gap-8">
           <span aria-hidden className="absolute left-[1.9rem] top-4 h-[calc(100%-2rem)] w-px bg-line lg:left-0 lg:top-[2.6rem] lg:h-px lg:w-full" />

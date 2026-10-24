@@ -10,7 +10,7 @@ export function Intro() {
     <Section tone="ivory" labelledBy="intro-heading">
       <Container className="grid gap-14 lg:grid-cols-12 lg:gap-10">
         <div className="reveal lg:col-span-6">
-          <SectionHeading as="h2" id="intro-heading" title={business.tagline} />
+          <SectionHeading as="h2" id="intro-heading" eyebrow="Welcome" title={business.tagline} />
           <Ornament className="mt-10" />
         </div>
         <div className="reveal space-y-6 text-lg leading-relaxed text-ink-soft lg:col-span-5 lg:col-start-8 lg:pt-4">

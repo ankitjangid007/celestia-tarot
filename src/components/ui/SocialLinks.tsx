@@ -33,7 +33,7 @@ function InstagramIcon() {
 function FacebookIcon() {
   return (
     <svg {...iconProps}>
-      <path d="M14.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.3 0-3.9 1.4-3.9 4v2.2H8.9v3h2.6V21" />
+      <path d="M15.5 3H13a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7.5a.5.5 0 0 1 .5-.5h2.5V3Z" />
     </svg>
   );
 }

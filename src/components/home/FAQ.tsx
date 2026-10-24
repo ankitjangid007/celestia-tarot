@@ -16,7 +16,7 @@ export function FAQ() {
     <Section tone="ivory" labelledBy="faq-heading">
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
-          <SectionHeading as="h2" id="faq-heading" title="Questions, Answered" description="Everything you might want to know before your first reading." />
+          <SectionHeading as="h2" id="faq-heading" eyebrow="Good to Know" title="Questions, Answered" description="Everything you might want to know before your first reading." />
         </div>
         <div className="lg:col-span-7 lg:col-start-6">
           <ul className="divide-y divide-line border-y border-line">

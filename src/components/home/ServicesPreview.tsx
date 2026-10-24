@@ -26,6 +26,7 @@ export function ServicesPreview() {
             as="h2"
             id="services-heading"
             tone="dark"
+            eyebrow="Our Readings"
             title="Readings for Every Question"
             description="Choose the reading that fits what you’re exploring, or begin with a general session and let the cards lead."
           />
@@ -36,7 +37,7 @@ export function ServicesPreview() {
         <ul className="mt-14 grid gap-6 lg:grid-cols-12">
           {services.map((service, index) => (
             <li key={service.id} className={layout[index]?.span}>
-              <ServiceCard service={service} variant={layout[index]?.variant ?? "cream"} />
+              <ServiceCard service={service} position={index + 1} variant={layout[index]?.variant ?? "cream"} />
             </li>
           ))}
         </ul>

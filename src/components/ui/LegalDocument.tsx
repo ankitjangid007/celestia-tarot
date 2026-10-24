@@ -18,7 +18,7 @@ const slug = (title: string) => title.toLowerCase().replace(/[^a-z0-9]+/g, "-").
 /** Readable long-form layout for Terms, Privacy and Disclaimer. */
 export function LegalDocument({ intro, sections }: LegalDocumentProps) {
   return (
-    <Section tone="ivory" className="py-16 sm:py-24 lg:py-28">
+    <Section tone="ivory" size="md">
       <Container narrow>
         <p className="text-sm text-ink-soft">Last updated: {business.legalLastUpdated}</p>
         {intro ? <p className="mt-6 font-serif text-2xl leading-snug text-plum sm:text-3xl">{intro}</p> : null}
